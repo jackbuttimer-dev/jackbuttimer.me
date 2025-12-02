@@ -407,3 +407,53 @@ body {
   justify-content: center;
   gap: 1rem;
 }
+/* -------------------------------------- */
+/*   GLOBAL SPACING FIX – MORE BREATHING  */
+/* -------------------------------------- */
+
+/* Increase spacing between every major section */
+section {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+/* Add extra space before a new section begins */
+section h2 {
+  margin-bottom: 2rem;
+}
+
+/* Improve spacing inside text-heavy sections */
+.about-text p + p,
+.contact-text p + p,
+.projects-section p + p {
+  margin-top: 1.2rem;
+}
+
+/* Increase gap between “About me” and “What I’m focusing on” */
+.about-section .about-grid {
+  gap: 4rem;
+}
+
+/* Increase gap between skills cards */
+.skills-grid {
+  gap: 3rem;
+}
+
+/* Make Project cards breathe more */
+.projects-grid {
+  gap: 3rem;
+}
+
+/* Add space before UL lists */
+.skill-card ul,
+.about-card ul,
+.project-card ul {
+  margin-top: 1rem;
+}
+
+/* Add padding inside cards for better spacing */
+.skill-card,
+.project-card,
+.about-card {
+  padding: 2rem !important;
+}
