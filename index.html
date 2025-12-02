@@ -59,7 +59,7 @@
           <p class="eyebrow">Web Developer</p>
           <h1>Hi, I’m Jack. I build clean, modern websites.</h1>
           <p class="hero-subtitle">
-            I’m an aspiring developer focused on fast, responsive sites for small businesses,
+            I’m a self-taught web developer focused on fast, responsive sites for small businesses,
             personal brands, and creative projects.
           </p>
           <div class="hero-actions">
@@ -69,10 +69,9 @@
         </div>
 
         <div class="hero-visual">
-          <!-- You can swap this for an image later -->
           <div class="hero-card">
-            <p class="hero-card-title">Currently working on</p>
-            <h2>Jupiters Coffee website</h2>
+            <p class="hero-card-title">Currently building</p>
+            <h2>Jupiters Coffee – Landing Page</h2>
             <p class="hero-card-text">
               A modern landing page for a specialty coffee brand, built with HTML &amp; CSS and deployed on Netlify.
             </p>
@@ -87,14 +86,14 @@
         <div class="about-text">
           <h2>About me</h2>
           <p>
-            I’m Jack Buttimer, a self-taught web developer who loves designing and building
-            simple, modern interfaces. I’m currently learning HTML, CSS, and JavaScript, and
-            using real projects to level up fast.
+            I’m <strong>Jack Buttimer</strong>, a self-taught web developer who loves designing and
+            building simple, modern interfaces. I’m currently focused on <strong>HTML</strong>,
+            <strong>CSS</strong> and <strong>JavaScript</strong>, and I use real projects to level up quickly.
           </p>
           <p>
-            Outside of coding, I’m interested in tech, design and building brands –
-            including Jupiters Coffee, my own coffee concept. My goal is to work remotely in tech while
-            building cool things on the side.
+            Outside of coding, I’m into tech, design and building brands – including
+            <strong>Jupiters Coffee</strong>, my own coffee concept. My goal is to work remotely in tech
+            while building cool side projects along the way.
           </p>
         </div>
         <div class="about-highlights">
@@ -116,7 +115,7 @@
       <div class="container">
         <h2>Skills</h2>
         <p class="section-intro">
-          I’m constantly learning, but here are the main tools and skills I use today.
+          I’m always learning, but these are the core skills and tools I’m using right now.
         </p>
 
         <div class="skills-grid">
@@ -124,128 +123,4 @@
             <h3>Frontend</h3>
             <ul>
               <li>HTML5 – semantic structure</li>
-              <li>CSS3 – layout, flexbox, basic animations</li>
-              <li>Responsive design for mobile &amp; desktop</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <h3>Tools</h3>
-            <ul>
-              <li>VS Code</li>
-              <li>Git &amp; GitHub</li>
-              <li>Netlify (deployments &amp; forms)</li>
-            </ul>
-          </div>
-          <div class="skill-card">
-            <h3>Currently learning</h3>
-            <ul>
-              <li>JavaScript basics</li>
-              <li>Better UI/UX design</li>
-              <li>Working with APIs</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="story" class="projects-section">
-      <div class="container">
-        <h2>Projects</h2>
-        <p class="section-intro">
-          A few of the projects I’m working on or planning. I’m adding more as I build them.
-        </p>
-
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>Jupiters Coffee Landing Page</h3>
-            <p>
-              A bold, modern landing page for a fictional specialty coffee brand. Built with
-              HTML &amp; CSS and deployed on Netlify with a custom domain.
-            </p>
-            <ul class="project-tags">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Netlify</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <h3>Personal Portfolio (this site)</h3>
-            <p>
-              My personal portfolio site, showcasing who I am, what I’m learning, and the projects
-              I’m working on. Built from scratch and connected to GitHub for automatic deploys.
-            </p>
-            <ul class="project-tags">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>GitHub</li>
-              <li>Netlify</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <h3>Upcoming: Small Business Template</h3>
-            <p>
-              A reusable website template for local businesses (cafés, barbers, studios), focused on
-              clarity, mobile performance, and easy content updates.
-            </p>
-            <ul class="project-tags">
-              <li>In progress</li>
-              <li>Design + Dev</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="visit" class="contact-section">
-      <div class="container contact-grid">
-        <div class="contact-text">
-          <h2>Let’s work together</h2>
-          <p>
-            Need a simple, modern website for your project or business? I’m open to small
-            freelance projects, collaborations, or junior developer opportunities.
-          </p>
-          <p>
-            Use the form to send me a message and I’ll get back to you as soon as I can.
-          </p>
-        </div>
-
-        <div class="contact-form-wrapper">
-          <form name="contact" method="POST" data-netlify="true" class="contact-form">
-            <input type="hidden" name="form-name" value="contact" />
-            <div class="form-field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" required />
-            </div>
-            <div class="form-field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required />
-            </div>
-            <div class="form-field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn primary-btn">Send message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Jack Buttimer. All rights reserved.</p>
-      <p class="footer-note">Built with HTML, CSS, GitHub &amp; Netlify.</p>
-    </div>
-
-    <script>
-      // Set current year in footer
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </footer>
-</body>
-</html>
+              <li>CSS3 – layout, flexbox, basic animations</li
