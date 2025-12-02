@@ -4,211 +4,266 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jack Buttimer | Web Developer</title>
+  <meta name="description" content="Jack Buttimer is a web developer building clean, modern websites for small businesses and personal brands." />
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=3" />
-
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
-<body>
+<body data-theme="dark">
+  <!-- Glowing background blob -->
+  <div class="bg-blob"></div>
 
-<header class="nav-header">
-  <div class="container nav-wrapper">
-    <div class="logo">JACK <span>Buttimer</span></div>
+  <!-- HEADER -->
+  <header class="nav-header">
+    <div class="container nav-wrapper">
+      <div class="logo">JACK <span>Buttimer</span></div>
 
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
-<!-- -----------------------------------------
- HERO SECTION
------------------------------------------- -->
-
-<section id="hero" class="hero section fade-up">
-  <div class="container hero-center">
-    <p class="tag">Web Developer</p>
-
-    <h1>Hi, I’m Jack. I build clean, modern websites.</h1>
-
-    <p class="subtitle">
-      I specialise in responsive, fast-loading websites for small businesses, personal brands,
-      and creative projects — with a focus on clean UI and modern design.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#projects" class="btn primary">View my work</a>
-      <a href="#contact" class="btn secondary">Let’s work together</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- -----------------------------------------
- ABOUT
------------------------------------------- -->
-
-<section id="about" class="section fade-up">
-  <div class="container about-grid">
-
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>
-        I’m <strong>Jack Buttimer</strong>, a self-taught web developer who loves building simple,
-        modern, user-friendly interfaces. My current focus is mastering
-        <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> while designing for clarity and clean layouts.
-      </p>
-      <p>
-        I enjoy tech, design, and building brands. My long-term goal is to work remotely in tech
-        while building creative projects along the way.
-      </p>
-    </div>
-
-    <div class="focus-card">
-      <h3>What I’m Focusing On</h3>
-      <ul>
-        <li>Responsive layouts & mobile-first design</li>
-        <li>Clean UI & modern aesthetics</li>
-        <li>Deploying with GitHub & Netlify</li>
-        <li>JavaScript fundamentals</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- -----------------------------------------
- SKILLS
------------------------------------------- -->
-
-<section id="skills" class="section fade-up">
-  <div class="container">
-    <h2 class="center">Skills</h2>
-    <p class="section-sub center">Tools & technologies I use to build modern websites.</p>
-
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Frontend</h3>
-        <ul>
-          <li>HTML5 (semantic, clean structure)</li>
-          <li>CSS3 (flexbox, grid, animations)</li>
-          <li>Responsive design</li>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </div>
+      </nav>
 
-      <div class="skill-card">
-        <h3>Tools</h3>
-        <ul>
-          <li>VS Code</li>
-          <li>Git & GitHub</li>
-          <li>Netlify deployment</li>
-        </ul>
-      </div>
-
-      <div class="skill-card">
-        <h3>Learning</h3>
-        <ul>
-          <li>JavaScript</li>
-          <li>UI/UX best practices</li>
-          <li>APIs</li>
-        </ul>
-      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+        <span class="theme-icon">🌙</span>
+      </button>
     </div>
-  </div>
-</section>
+  </header>
 
-
-<!-- -----------------------------------------
- PROJECTS
------------------------------------------- -->
-
-<section id="projects" class="section fade-up">
-  <div class="container">
-    <h2 class="center">Projects</h2>
-    <p class="section-sub center">A few things I’ve been working on recently.</p>
-
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <h3>Developer Portfolio</h3>
-        <p>A clean, modern portfolio site built from scratch using HTML, CSS, GitHub and Netlify.</p>
-        <div class="tags">
-          <span>HTML</span><span>CSS</span><span>Netlify</span>
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="section hero reveal">
+      <div class="container hero-center">
+        <p class="tag">Web Developer</p>
+        <h1>Hi, I’m Jack. I build clean, modern websites.</h1>
+        <p class="subtitle">
+          I specialise in responsive, fast-loading websites for small businesses, personal brands,
+          and creative projects — with a focus on clean UI and modern design.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary">View my work</a>
+          <a href="#contact" class="btn secondary">Let’s work together</a>
         </div>
       </div>
+    </section>
 
-      <div class="project-card">
-        <h3>Jupiters Coffee</h3>
-        <p>A branded landing page design concept for a craft coffee business. Focused on UI, layout and aesthetic.</p>
-        <div class="tags">
-          <span>HTML</span><span>CSS</span><span>Design</span>
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I’m <strong>Jack Buttimer</strong>, a self-taught web developer who loves building simple,
+            modern, user-friendly interfaces. My current focus is mastering
+            <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> while designing for clarity and clean layouts.
+          </p>
+          <p>
+            I enjoy tech, design, and building brands. My long-term goal is to work remotely in tech
+            while building creative projects along the way.
+          </p>
+        </div>
+
+        <div class="card focus-card">
+          <h3>What I’m focusing on</h3>
+          <ul>
+            <li>Responsive layouts &amp; mobile-first design</li>
+            <li>Clean UI &amp; modern aesthetics</li>
+            <li>Deploying with GitHub &amp; Netlify</li>
+            <li>JavaScript fundamentals</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <div class="project-card">
-        <h3>Business Template (In Progress)</h3>
-        <p>A reusable, mobile-first template for small businesses — optimised for clarity and speed.</p>
-        <div class="tags">
-          <span>In Progress</span><span>Design + Dev</span>
+    <!-- SKILLS -->
+    <section id="skills" class="section reveal">
+      <div class="container">
+        <h2 class="center">Skills</h2>
+        <p class="section-sub center">Tools &amp; technologies I use to build modern websites.</p>
+
+        <div class="skills-grid">
+          <div class="card skill-card">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML5 (semantic, clean structure)</li>
+              <li>CSS3 (flexbox, grid, animations)</li>
+              <li>Responsive design</li>
+            </ul>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Tools</h3>
+            <ul>
+              <li>VS Code</li>
+              <li>Git &amp; GitHub</li>
+              <li>Netlify deployment</li>
+            </ul>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Learning</h3>
+            <ul>
+              <li>JavaScript</li>
+              <li>UI/UX best practices</li>
+              <li>APIs</li>
+            </ul>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <div class="container">
+        <h2 class="center">Projects</h2>
+        <p class="section-sub center">A few things I’ve been working on recently.</p>
 
+        <div class="projects-grid">
+          <article class="card project-card">
+            <div class="project-image project-image-1"></div>
+            <div class="project-body">
+              <h3>Developer Portfolio</h3>
+              <p>A clean, modern portfolio site built from scratch using HTML, CSS, GitHub and Netlify.</p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>Netlify</span>
+              </div>
+            </div>
+          </article>
 
-<!-- -----------------------------------------
- CONTACT
------------------------------------------- -->
+          <article class="card project-card">
+            <div class="project-image project-image-2"></div>
+            <div class="project-body">
+              <h3>Jupiters Coffee</h3>
+              <p>A landing page concept for a craft coffee brand, focused on layout, branding and aesthetic.</p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>Design</span>
+              </div>
+            </div>
+          </article>
 
-<section id="contact" class="section fade-up">
-  <div class="container contact-grid">
+          <article class="card project-card">
+            <div class="project-image project-image-3"></div>
+            <div class="project-body">
+              <h3>Business Template (In Progress)</h3>
+              <p>A reusable, mobile-first template for small businesses — optimised for clarity and speed.</p>
+              <div class="tags">
+                <span>In progress</span><span>Design + Dev</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <div class="contact-text">
-      <h2>Let’s Work Together</h2>
-      <p>
-        Need a modern website? I’m available for small projects, collaborations, and junior developer roles.
-      </p>
-    </div>
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <div class="container contact-grid">
+        <div class="contact-text">
+          <h2>Let’s Work Together</h2>
+          <p>
+            Need a modern website? I’m available for small projects, collaborations, and junior developer roles.
+          </p>
+          <p class="contact-email">
+            Or email me directly:
+            <a href="mailto:jackb2128@gmail.com">jackb2128@gmail.com</a>
+          </p>
+        </div>
 
-    <form name="contact" method="POST" data-netlify="true" class="contact-form">
-      <input type="hidden" name="form-name" value="contact">
+        <form name="contact" method="POST" data-netlify="true" class="contact-form">
+          <input type="hidden" name="form-name" value="contact" />
 
-      <label>Name</label>
-      <input type="text" name="name" required />
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" required />
 
-      <label>Email</label>
-      <input type="email" name="email" required />
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required />
 
-      <label>Message</label>
-      <textarea name="message" rows="4" required></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
 
-      <button class="btn primary" type="submit">Send Message</button>
-    </form>
+          <button class="btn primary" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
-  </div>
-</section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Jack Buttimer. Built with HTML, CSS &amp; Netlify.</p>
+  </footer>
 
+  <script>
+    // current year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<footer class="footer">
-  <p>© <span id="year"></span> Jack Buttimer. Built with HTML, CSS & Netlify.</p>
-</footer>
+    // intersection observer for reveal-on-scroll
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    reveals.forEach((el) => observer.observe(el));
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    // scroll spy for nav links
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
+    const spyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => {
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === `#${entry.target.id}`
+              );
+            });
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    sections.forEach((sec) => spyObserver.observe(sec));
+
+    // floating blob parallax
+    const blob = document.querySelector(".bg-blob");
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY * 0.15;
+      blob.style.transform = `translate3d(-30%, ${y}px, 0)`;
+    });
+
+    // theme toggle
+    const body = document.body;
+    const toggleBtn = document.querySelector("[data-theme-toggle]");
+    const themeIcon = toggleBtn.querySelector(".theme-icon");
+
+    function setTheme(theme) {
+      body.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+      themeIcon.textContent = theme === "dark" ? "🌙" : "☀️";
+    }
+
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    setTheme(savedTheme);
+
+    toggleBtn.addEventListener("click", () => {
+      const newTheme = body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      setTheme(newTheme);
+    });
+  </script>
 </body>
 </html>
