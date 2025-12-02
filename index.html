@@ -3,7 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jupiter's Coffee | Specialty Coffee & Cozy Vibes</title>
+
+  <!-- Primary Meta Tags -->
+  <title>Jack Buttimer | Web Developer</title>
+  <meta name="title" content="Jack Buttimer | Web Developer" />
+  <meta name="description" content="Jack Buttimer is a web developer building clean, modern websites for small businesses and personal brands." />
+  <meta name="keywords" content="Jack Buttimer, web developer, portfolio, website design, HTML, CSS, JavaScript, Chester" />
+  <meta name="author" content="Jack Buttimer" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jack Buttimer | Web Developer" />
+  <meta property="og:description" content="Modern, responsive websites for small businesses and creators." />
+  <meta property="og:url" content="https://jackbuttimer.me" />
+  <meta property="og:image" content="https://jackbuttimer.me/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jack Buttimer | Web Developer" />
+  <meta name="twitter:description" content="Modern, responsive websites for small businesses and creators." />
+  <meta name="twitter:image" content="https://jackbuttimer.me/og-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,201 +35,217 @@
   <header class="site-header">
     <div class="container nav">
       <div class="logo">
-        <span class="logo-main">Jupiter's</span>
-        <span class="logo-sub">Coffee</span>
+        <span class="logo-main">Jack</span>
+        <span class="logo-sub">Buttimer</span>
       </div>
+
       <nav>
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#story">Our Story</a></li>
-          <li><a href="#visit">Visit</a></li>
+          <li><a href="#story">Projects</a></li>
+          <li><a href="#menu">Skills</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#visit">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="hero" class="hero" data-section>
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <p class="eyebrow">Specialty coffee · Cozy space</p>
-        <h1>Jupiter's Coffee – for daydreamers, night owls, and everyone in between.</h1>
-        <p class="subtitle">
-          Hand-poured coffee, cosmic vibes, and a warm corner to call your own.  
-          Perfect for deep chats, light reading, or getting work done.
-        </p>
-        <div class="hero-buttons">
-          <a href="#menu" class="btn primary">View our menu</a>
-          <a href="#visit" class="btn secondary">Plan your visit</a>
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">Web Developer</p>
+          <h1>Hi, I’m Jack. I build clean, modern websites.</h1>
+          <p class="hero-subtitle">
+            I’m an aspiring developer focused on fast, responsive sites for small businesses,
+            personal brands, and creative projects.
+          </p>
+          <div class="hero-actions">
+            <a href="#story" class="btn primary-btn">View my projects</a>
+            <a href="#visit" class="btn secondary-btn">Let’s work together</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- You can swap this for an image later -->
+          <div class="hero-card">
+            <p class="hero-card-title">Currently working on</p>
+            <h2>Jupiters Coffee website</h2>
+            <p class="hero-card-text">
+              A modern landing page for a specialty coffee brand, built with HTML &amp; CSS and deployed on Netlify.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-visual">
-        <div class="planet">
-          <div class="ring"></div>
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2>About me</h2>
+          <p>
+            I’m Jack Buttimer, a self-taught web developer who loves designing and building
+            simple, modern interfaces. I’m currently learning HTML, CSS, and JavaScript, and
+            using real projects to level up fast.
+          </p>
+          <p>
+            Outside of coding, I’m interested in tech, design and building brands –
+            including Jupiters Coffee, my own coffee concept. My goal is to work remotely in tech while
+            building cool things on the side.
+          </p>
         </div>
-        <p class="hero-caption">Locally roasted beans · Slow brewed · Always cozy</p>
+        <div class="about-highlights">
+          <div class="about-card">
+            <h3>What I’m focusing on</h3>
+            <ul>
+              <li>Responsive layouts with HTML &amp; CSS</li>
+              <li>Clean, readable code and structure</li>
+              <li>Deploying with GitHub &amp; Netlify</li>
+              <li>Improving UI &amp; UX for small brands</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MENU -->
-  <section id="menu" class="section" data-section>
-    <div class="container">
-      <h2>Signature Menu</h2>
-      <p class="section-subtitle">
-        A few of our favourites. The full menu is available in-store.
-      </p>
-
-      <div class="cards-grid">
-        <article class="card">
-          <h3>Jupiter Latte</h3>
-          <p class="card-tag">House favourite</p>
-          <p>
-            Silky double-shot latte with our signature caramel & vanilla blend, topped with micro-foam.
-          </p>
-          <p class="price">£3.60</p>
-        </article>
-
-        <article class="card">
-          <h3>Mocha Meteor</h3>
-          <p class="card-tag">Rich & chocolatey</p>
-          <p>
-            Dark chocolate, espresso, and steamed oat milk, finished with cocoa dust.
-          </p>
-          <p class="price">£3.90</p>
-        </article>
-
-        <article class="card">
-          <h3>Cold Brew Comet</h3>
-          <p class="card-tag">Iced</p>
-          <p>
-            18-hour cold brew over ice, bright and smooth with citrus notes.
-          </p>
-          <p class="price">£3.80</p>
-        </article>
-
-        <article class="card">
-          <h3>Planetary Pastries</h3>
-          <p class="card-tag">Fresh daily</p>
-          <p>
-            Cinnamon rolls, almond croissants, and rotating vegan bakes from local makers.
-          </p>
-          <p class="price">From £2.40</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORY -->
-  <section id="story" class="section alt" data-section>
-    <div class="container story-grid">
-      <div>
-        <h2>Our Story</h2>
-        <p>
-          Jupiter's Coffee started as a sketch in a notebook and a shared love of
-          long chats over really good coffee. We wanted a space that felt like a
-          second living room – just with better espresso.
+    <!-- SKILLS -->
+    <section id="menu" class="skills-section">
+      <div class="container">
+        <h2>Skills</h2>
+        <p class="section-intro">
+          I’m constantly learning, but here are the main tools and skills I use today.
         </p>
-        <p>
-          We work with small roasters, bake in small batches, and keep things
-          simple: good beans, good music, and a team that actually remembers your name.
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML5 – semantic structure</li>
+              <li>CSS3 – layout, flexbox, basic animations</li>
+              <li>Responsive design for mobile &amp; desktop</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Tools</h3>
+            <ul>
+              <li>VS Code</li>
+              <li>Git &amp; GitHub</li>
+              <li>Netlify (deployments &amp; forms)</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Currently learning</h3>
+            <ul>
+              <li>JavaScript basics</li>
+              <li>Better UI/UX design</li>
+              <li>Working with APIs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="story" class="projects-section">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-intro">
+          A few of the projects I’m working on or planning. I’m adding more as I build them.
         </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Jupiters Coffee Landing Page</h3>
+            <p>
+              A bold, modern landing page for a fictional specialty coffee brand. Built with
+              HTML &amp; CSS and deployed on Netlify with a custom domain.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Netlify</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <h3>Personal Portfolio (this site)</h3>
+            <p>
+              My personal portfolio site, showcasing who I am, what I’m learning, and the projects
+              I’m working on. Built from scratch and connected to GitHub for automatic deploys.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>GitHub</li>
+              <li>Netlify</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <h3>Upcoming: Small Business Template</h3>
+            <p>
+              A reusable website template for local businesses (cafés, barbers, studios), focused on
+              clarity, mobile performance, and easy content updates.
+            </p>
+            <ul class="project-tags">
+              <li>In progress</li>
+              <li>Design + Dev</li>
+            </ul>
+          </article>
+        </div>
       </div>
-      <ul class="story-list">
-        <li>☕ Specialty coffee, ethically sourced</li>
-        <li>💻 Laptop-friendly with plenty of outlets</li>
-        <li>🎵 Laid-back playlists, never too loud</li>
-        <li>🎨 Rotating local art on the walls</li>
-      </ul>
-    </div>
-  </section>
+    </section>
 
-  <!-- VIBES / SPACE -->
-  <section class="section" data-section>
-    <div class="container">
-      <h2>The Space</h2>
-      <p class="section-subtitle">
-        A cozy corner of the city with room for slow mornings and late afternoon focus sessions.
-      </p>
-
-      <div class="cards-grid">
-        <article class="card">
-          <h3>Cozy Corners</h3>
+    <!-- CONTACT -->
+    <section id="visit" class="contact-section">
+      <div class="container contact-grid">
+        <div class="contact-text">
+          <h2>Let’s work together</h2>
           <p>
-            Window seats and sofa nooks perfect for reading, journaling, or catching up with friends.
+            Need a simple, modern website for your project or business? I’m open to small
+            freelance projects, collaborations, or junior developer opportunities.
           </p>
-        </article>
-        <article class="card">
-          <h3>Work-Friendly</h3>
           <p>
-            Stable Wi-Fi, plenty of plugs, and a calm atmosphere if you need to get things done.
+            Use the form to send me a message and I’ll get back to you as soon as I can.
           </p>
-        </article>
-        <article class="card">
-          <h3>Community Events</h3>
-          <p>
-            Open mic nights, board game evenings, and occasional latte art throwdowns.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
+        </div>
 
-  <!-- VISIT -->
-  <section id="visit" class="section alt" data-section>
-    <div class="container visit-grid">
-      <div>
-        <h2>Visit Jupiter's</h2>
-        <p class="section-subtitle">
-          Drop by for a quick caffeine boost or stay awhile. We’ve got a seat with your name on it.
-        </p>
-        <p><strong>Address</strong><br />123 Orbit Lane, Cork, Ireland</p>
-        <p><strong>Contact</strong><br />hello@jupiterscoffee.com<br />+353 (0)12 345 678</p>
-        <a href="#" class="btn primary small">Get directions</a>
+        <div class="contact-form-wrapper">
+          <form name="contact" method="POST" data-netlify="true" class="contact-form">
+            <input type="hidden" name="form-name" value="contact" />
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn primary-btn">Send message</button>
+          </form>
+        </div>
       </div>
-
-      <div class="hours-card">
-        <h3>Opening Hours</h3>
-        <ul class="hours-list">
-          <li><span>Mon – Thu</span><span>7:30 – 18:00</span></li>
-          <li><span>Fri</span><span>7:30 – 20:00</span></li>
-          <li><span>Sat</span><span>8:30 – 20:00</span></li>
-          <li><span>Sun</span><span>9:00 – 16:00</span></li>
-        </ul>
-        <p class="note">Kitchen closes 30 minutes before closing.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-content">
-      <p>© <span id="year"></span> Jupiter's Coffee. Brewed with care.</p>
+      <p>© <span id="year"></span> Jack Buttimer. All rights reserved.</p>
+      <p class="footer-note">Built with HTML, CSS, GitHub &amp; Netlify.</p>
     </div>
+
+    <script>
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </footer>
-
-  <script>
-    // Footer year
-    const yearSpan = document.getElementById("year");
-    yearSpan.textContent = new Date().getFullYear();
-
-    // Simple scroll reveal for sections
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    document
-      .querySelectorAll("[data-section]")
-      .forEach((section) => observer.observe(section));
-  </script>
 </body>
 </html>
