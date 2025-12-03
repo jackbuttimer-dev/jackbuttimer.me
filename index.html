@@ -1423,10 +1423,16 @@
             <!-- Netlify form-ready -->
         <form
   class="contact-form"
-  action="mailto:jackbuttimer.dev@gmail.com"
+  action="https://formsubmit.co/jackbuttimer.dev@gmail.com"
   method="POST"
-  enctype="text/plain"
 >
+  <!-- FormSubmit options -->
+  <input type="hidden" name="_subject" value="New message from jackbuttimer.me" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://jackbuttimer.me/#contact" />
+  <!-- Honeypot for spam bots -->
+  <input type="text" name="_honey" style="display:none" />
+
   <div class="contact-form-row">
     <div class="field">
       <label for="name">Name</label>
@@ -1449,6 +1455,7 @@
       />
     </div>
   </div>
+
   <div class="field">
     <label for="message">Message</label>
     <textarea
@@ -1459,14 +1466,17 @@
       required
     ></textarea>
   </div>
+
   <button class="btn-primary" type="submit">
     Send message
   </button>
+
   <p class="contact-note">
-    This will open your email app and send a message directly to
+    Your message will be sent securely and delivered straight to
     <strong>jackbuttimer.dev@gmail.com</strong>.
   </p>
 </form>
+
 
           </aside>
         </div>
