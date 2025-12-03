@@ -61,7 +61,7 @@ module.exports = async (req, res) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Jack Portfolio <contact@jackbuttimer.me>', // domain must be verified in Resend
+       from: 'onboarding@resend.dev', // domain must be verified in Resend
         to: ['jackbuttimer.dev@gmail.com'],
         subject,
         html,
