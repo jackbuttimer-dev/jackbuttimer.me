@@ -1,381 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Jack Buttimer – Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio of Jack Buttimer – field engineer and aspiring front-end developer based in the UK."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body data-theme="dark">
-    <div class="page-wrap">
-      <!-- Header / Nav -->
-      <header class="site-header">
-        <div class="container">
-          <div class="nav-bar">
-            <div class="nav-left">
-              <div class="logo-pill">J</div>
-              <div class="brand-text">
-                <div class="brand-name">Jack Buttimer</div>
-                <div class="brand-tagline">Building clean, modern web experiences</div>
-              </div>
-            </div>
-            <nav class="nav-links">
-              <a href="#about" data-nav="about">About</a>
-              <a href="#projects" data-nav="projects">Projects</a>
-              <a href="#contact" data-nav="contact">Contact</a>
-              <button id="theme-toggle" class="theme-toggle" type="button">
-                <span>●</span> Toggle theme
-              </button>
-            </nav>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <!-- Hero -->
-        <section class="hero">
-          <div class="hero-blob" aria-hidden="true"></div>
-          <div class="container">
-            <div class="hero-inner fade-up">
-              <div class="hero-left">
-                <div class="hero-kicker">Portfolio · 2025</div>
-                <h1 class="hero-title">
-                  Hi, I’m <span class="highlight">Jack</span><br />I like making
-                  things look and feel good on the web.
-                </h1>
-                <p class="hero-subtitle">
-                  Field service engineer turning all the copy-paste HTML nights into
-                  real front-end skills. I’m currently learning modern web dev and
-                  building out projects like my Jupiters coffee brand.
-                </p>
-                <div class="hero-meta">
-                  <span class="tag-pill">HTML / CSS</span>
-                  <span class="tag-pill">Vercel + GitHub</span>
-                  <span class="tag-pill">UI & layout</span>
-                </div>
-                <div class="hero-actions">
-                  <a href="#contact" class="btn btn-primary">Contact me</a>
-                  <a href="#projects" class="btn btn-ghost">View projects</a>
-                </div>
-              </div>
-              <div class="hero-right">
-                <aside class="hero-card">
-                  <div class="hero-card-header">
-                    <div>
-                      <div class="hero-card-title">Currently</div>
-                      <div class="hero-card-sub">Learning frontend & shipping small</div>
-                    </div>
-                    <div class="hero-card-pill">In progress</div>
-                  </div>
-                  <div class="hero-stats">
-                    <div class="stat-card">
-                      <div class="stat-label">Focus</div>
-                      <div class="stat-value">Portfolio, layout, spacing</div>
-                    </div>
-                    <div class="stat-card">
-                      <div class="stat-label">Stack</div>
-                      <div class="stat-value">HTML · CSS · JS</div>
-                    </div>
-                  </div>
-                  <div class="hero-card-footer">
-                    This site is running on Vercel with a custom domain, serverless
-                    contact form, and Resend for email delivery.
-                  </div>
-                </aside>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="section">
-          <div class="container fade-up">
-            <header class="section-header">
-              <div class="section-kicker">About</div>
-              <h2 class="section-title">A bit about me</h2>
-              <p class="section-subtitle">
-                I’m combining hands-on technical work, client support and a growing
-                interest in UI, layout and user experience.
-              </p>
-            </header>
-
-            <div class="about-grid">
-              <div class="about-text">
-                <p>
-                  I’ve spent the last few years working in technical and service-based
-                  roles – building, fixing and looking after systems for other people.
-                  Along the way I realised I really enjoy making tools feel clean,
-                  simple and easy to use.
-                </p>
-                <p>
-                  This portfolio is where I’m learning by doing: shipping small
-                  projects, cleaning up layouts, and slowly moving from “copy/paste”
-                  to understanding how everything fits together.
-                </p>
-                <p>
-                  Outside of tech I’m into coffee (hence Jupiters), building side
-                  projects, and studying health & nutrition.
-                </p>
-              </div>
-              <div class="about-highlights">
-                <div class="about-pill">
-                  <strong>What I’m learning now</strong><br />
-                  Clean layouts, responsive design, animations, and how to turn ideas
-                  into working components.
-                </div>
-                <div class="about-pill">
-                  <strong>What I’m good at</strong><br />
-                  Figuring things out, staying persistent, and talking to real people
-                  (not just staring at code all day).
-                </div>
-                <div class="about-pill">
-                  <strong>Tools I’m using</strong><br />
-                  VS Code, GitHub, Vercel, Figma (for design ideas), Resend for
-                  email.
-                </div>
-                <div class="about-pill">
-                  <strong>What I want next</strong><br />
-                  More experience building real interfaces – and eventually a fully
-                  remote role in tech.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="section">
-          <div class="container fade-up">
-            <header class="section-header">
-              <div class="section-kicker">Projects</div>
-              <h2 class="section-title">Things I’m working on</h2>
-              <p class="section-subtitle">
-                Not a giant wall of case studies (yet) – just small, honest projects
-                I’m using to learn and improve.
-              </p>
-            </header>
-
-            <div class="projects-grid">
-              <article class="project-card">
-                <div class="project-label">Live</div>
-                <h3 class="project-title">This Portfolio</h3>
-                <p class="project-body">
-                  Static HTML, custom CSS and a serverless contact form wired up with
-                  Vercel Functions and Resend. This is where I’m experimenting with
-                  layout, spacing and animations.
-                </p>
-                <div class="project-meta">
-                  <span class="project-tag">Vercel</span>
-                  <span class="project-tag">Resend</span>
-                  <span class="project-tag">Custom CSS</span>
-                </div>
-                <div class="project-link">
-                  <a href="https://jackbuttimer.me" target="_blank" rel="noreferrer"
-                    >Open site ↗</a
-                  >
-                </div>
-              </article>
-
-              <article class="project-card">
-                <div class="project-label">In progress</div>
-                <h3 class="project-title">Jupiters Coffee</h3>
-                <p class="project-body">
-                  A brand and landing page idea for a coffee concept – using it to
-                  play with colour, typography, hero sections and subtle animations.
-                </p>
-                <div class="project-meta">
-                  <span class="project-tag">Branding</span>
-                  <span class="project-tag">Hero design</span>
-                  <span class="project-tag">UI</span>
-                </div>
-              </article>
-
-              <article class="project-card">
-                <div class="project-label">Next up</div>
-                <h3 class="project-title">Small UX Experiments</h3>
-                <p class="project-body">
-                  Little components and micro-interactions – buttons, cards, navbars –
-                  built to feel clean, predictable and nice to use.
-                </p>
-                <div class="project-meta">
-                  <span class="project-tag">Micro-UI</span>
-                  <span class="project-tag">JavaScript</span>
-                  <span class="project-tag">Practice</span>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section">
-          <div class="container fade-up">
-            <header class="section-header">
-              <div class="section-kicker">Contact</div>
-              <h2 class="section-title">Say hello</h2>
-              <p class="section-subtitle">
-                Whether it’s feedback on this site, ideas, or opportunities – feel
-                free to drop a message. The form comes straight to my dev email.
-              </p>
-            </header>
-
-            <div class="contact-layout">
-              <div class="contact-info">
-                <div class="contact-card">
-                  <div class="contact-label">Email</div>
-                  <div class="contact-email">
-                    <a href="mailto:jackbuttimer.dev@gmail.com"
-                      >jackbuttimer.dev@gmail.com</a
-                    >
-                  </div>
-                </div>
-                <p>
-                  I’m based in the UK and working my way deeper into tech, one
-                  project at a time. If you’ve got advice, freelance ideas or a role
-                  you think I’d fit, I’m open to hearing about it.
-                </p>
-              </div>
-
-              <form id="contact-form" class="contact-form">
-                <div class="form-row">
-                  <div class="form-field">
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" required />
-                  </div>
-                  <div class="form-field">
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" required />
-                  </div>
-                </div>
-
-                <div class="form-field">
-                  <label for="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                  ></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Send message</button>
-                <p id="form-status" class="form-status"></p>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div class="container">
-          <div class="footer-inner">
-            <div>© <span id="year"></span> · Built by Jack in public.</div>
-            <div class="footer-links">
-              <a href="#top">Back to top</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jack Buttimer | Web Developer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">JB<span>.</span></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script>
-      // Keep current year in footer
-      document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="container hero-content">
+      <div>
+        <p class="eyebrow">Freelance Web Developer</p>
+        <h1>Hi, I'm Jack. I build clean, modern websites for small businesses.</h1>
+        <p class="subtitle">
+          Simple, fast, and mobile-friendly websites to help your business look professional online.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">View my work</a>
+          <a href="#contact" class="btn secondary">Work with me</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      // Theme toggle
-      const themeToggle = document.getElementById("theme-toggle");
-      const body = document.body;
-      themeToggle?.addEventListener("click", () => {
-        const current = body.getAttribute("data-theme") || "dark";
-        const next = current === "dark" ? "light" : "dark";
-        body.setAttribute("data-theme", next);
-      });
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <p class="section-subtitle">A few example websites I can build for you.</p>
 
-      // Simple nav highlight on scroll
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll(".nav-links a[data-nav]");
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Jupiter's Coffee – Café Website</h3>
+          <p>Single-page site with cosmic branding, signature drinks, story, and opening hours.</p>
+          <p class="tag">First real project</p>
+          <a href="https://jupiters-coffee.netlify.app" class="project-link" target="_blank">
+            View project
+          </a>
+        </article>
 
-      const setActiveNav = () => {
-        let currentId = "";
-        const scrollY = window.pageYOffset;
+        <article class="project-card">
+          <h3>Personal Trainer Landing Page</h3>
+          <p>Clean landing page focused on leads and online bookings.</p>
+          <p class="tag">Demo project</p>
+        </article>
 
-        sections.forEach((section) => {
-          const rect = section.getBoundingClientRect();
-          const offsetTop = rect.top + window.scrollY;
-          if (scrollY >= offsetTop - 140) {
-            currentId = section.id;
-          }
-        });
+        <article class="project-card">
+          <h3>Portfolio for a Photographer</h3>
+          <p>Image-focused gallery site showcasing work and services.</p>
+          <p class="tag">Demo project</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        navLinks.forEach((link) => {
-          if (link.dataset.nav === currentId) {
-            link.classList.add("is-active");
-          } else {
-            link.classList.remove("is-active");
-          }
-        });
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section alt">
+    <div class="container about-grid">
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I'm Jack, a self-taught web developer based in the UK. I focus on building simple,
+          professional websites for small businesses using clean HTML, CSS, and a bit of JavaScript.
+        </p>
+        <p>
+          With a background in customer service and tech, I’m easy to work with, explain things in
+          plain English, and deliver sites that work on phones, tablets, and laptops.
+        </p>
+      </div>
+      <div>
+        <ul class="about-list">
+          <li>✅ Responsive (mobile-friendly) layouts</li>
+          <li>✅ Fast loading and simple to use</li>
+          <li>✅ Perfect for cafés, trades, freelancers & coaches</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Let’s work together</h2>
+      <p class="section-subtitle">
+        Tell me a bit about your project — I’ll get back to you as soon as I can.
+      </p>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Tell me what you need…"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn primary">Send message</button>
+        <p id="form-status" class="form-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Jack Buttimer. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    const yearSpan = document.getElementById('year');
+    yearSpan.textContent = new Date().getFullYear();
+
+    // Contact form handler (talks to /api/contact)
+    const form = document.getElementById('contact-form');
+    const statusEl = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      statusEl.textContent = 'Sending…';
+
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
       };
 
-      window.addEventListener("scroll", setActiveNav);
-      setActiveNav();
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
 
-      // Fade-up on scroll
-      const fadeEls = document.querySelectorAll(".fade-up");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      fadeEls.forEach((el) => observer.observe(el));
-
-      // Contact form handler (keeps your working API integration)
-      const form = document.getElementById("contact-form");
-      const statusEl = document.getElementById("form-status");
-
-      form?.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        statusEl.textContent = "Sending...";
-
-        const formData = {
-          name: form.name.value,
-          email: form.email.value,
-          message: form.message.value,
-        };
-
-        try {
-          const response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          });
-
-          if (response.ok) {
-            statusEl.textContent = "Message sent! I’ll get back to you soon.";
-            form.reset();
-          } else {
-            let data = {};
-            try {
-              data = await response.json();
-            } catch (e) {}
-            statusEl.textContent =
-              data.error || "Something went wrong. Please try again later.";
-          }
-        } catch (err) {
-          console.error(err);
-          statusEl.textContent = "Network error. Please try again.";
+        if (response.ok) {
+          statusEl.textContent = 'Message sent! I’ll reply as soon as I can.';
+          form.reset();
+        } else {
+          statusEl.textContent = 'Something went wrong. Please try again later.';
         }
-      });
-    </script>
-  </body>
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = 'Network error. Try again.';
+      }
+    });
+  </script>
+</body>
 </html>
