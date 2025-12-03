@@ -176,20 +176,27 @@
           </p>
         </div>
 
-        <form name="contact" method="POST" data-netlify="true" class="contact-form">
-          <input type="hidden" name="form-name" value="contact" />
+        <form id="contact-form" class="contact-form">
+  <div class="form-row">
+    <div class="form-field">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required />
+    </div>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required />
+    </div>
+  </div>
 
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" required />
+  <div class="form-field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
 
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" required />
+  <button type="submit" class="btn-primary">Send message</button>
+  <p id="form-status" class="form-status"></p>
+</form>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-
-          <button class="btn primary" type="submit">Send message</button>
-        </form>
       </div>
     </section>
   </main>
@@ -265,5 +272,46 @@
       setTheme(newTheme);
     });
   </script>
+  <script>
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    statusEl.textContent = 'Sending...';
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        statusEl.textContent = 'Message sent! I’ll get back to you soon.';
+        form.reset();
+      } else {
+        let data = {};
+        try {
+          data = await response.json();
+        } catch (e) {}
+        statusEl.textContent =
+          data.error || 'Something went wrong. Please try again later.';
+      }
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = 'Network error. Please try again.';
+    }
+  });
+</script>
+
 </body>
 </html>
