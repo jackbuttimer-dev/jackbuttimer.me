@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jupiters Coffee</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #0b0a10;
+      --bg-soft: #15131f;
+      --accent: #f4c27a;
+      --accent-soft: rgba(244, 194, 122, 0.18);
+      --text: #f9f5f0;
+      --muted: #c7c0b5;
+      --coffee: #7a5535;
+      --radius-lg: 26px;
+      --transition: 220ms ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #302235 0, #070813 45%, #050509 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 32px 16px;
+    }
+
+    .page {
+      max-width: 1100px;
+      width: 100%;
+      background: radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 55%),
+        linear-gradient(145deg, #14121f, #07060c);
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 28px 80px rgba(0,0,0,0.9);
+      padding: 28px 30px 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Soft glow */
+    .page::before {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -80px;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #f5d098, transparent 70%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    /* Left side – text */
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .planet-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 30% 20%, #f9e1b0, #c28a52 45%, #5b3a25 80%);
+      box-shadow:
+        0 0 16px rgba(0,0,0,0.8),
+        0 0 22px rgba(244, 194, 122, 0.55);
+      border: 1px solid rgba(0,0,0,0.7);
+    }
+
+    .logo-text {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.6rem;
+      letter-spacing: 0.04em;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(5,5,10,0.8);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34,197,94,0.9);
+    }
+
+    .hero-heading {
+      font-size: 2.4rem;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .hero-heading span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 420px;
+      margin-bottom: 20px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .tag-pill {
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(15,15,25,0.9);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      border: none;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(120deg, #f4c27a, #e78b4e);
+      color: #201410;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition),
+        filter var(--transition);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 20px 52px rgba(0,0,0,0.9);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 9px 18px;
+      font-size: 0.86rem;
+      background: transparent;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .hero-footnote {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* Right side – “card” */
+    .right-card {
+      background: rgba(11,10,18,0.9);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 18px 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .right-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .right-heading {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .right-copy {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .mini-card {
+      border-radius: 16px;
+      background: rgba(18,16,26,0.9);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 10px 9px;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mini-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .mini-value {
+      font-size: 0.86rem;
+      color: var(--accent);
+    }
+
+    .right-footer {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .right-footer span:last-child {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 24px 20px 22px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px 10px;
+      }
+
+      .logo-text {
+        font-size: 2.2rem;
+      }
+
+      .hero-heading {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- LEFT -->
+    <section>
+      <div class="logo-row">
+        <div class="planet-circle"></div>
+        <div class="logo-text">Jupiters</div>
+      </div>
+
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Warm drinks · friendly faces
+      </div>
+
+      <h1 class="hero-heading">
+        Your daily <span>orbit</span> starts here.
+      </h1>
+
+      <p class="hero-subtitle">
+        A cosy corner for coffee lovers, remote workers, and late-night thinkers.
+        Crafted espresso, warm pastries, and a space-inspired atmosphere.
+      </p>
+
+      <div class="hero-tags">
+        <span class="tag-pill">Single-origin espresso</span>
+        <span class="tag-pill">Planet-themed specials</span>
+        <span class="tag-pill">Fast Wi-Fi & comfy seating</span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="#visit">
+          View menu
+          <span>↗</span>
+        </a>
+        <a class="btn-ghost" href="#story">
+          Our story
+        </a>
+      </div>
+
+      <p class="hero-footnote">
+        Open late · perfect for study sessions, code sprints, and catch-ups.
+      </p>
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="right-card">
+      <div>
+        <div class="right-title">Snapshot</div>
+        <h2 class="right-heading">A coffee shop in orbit</h2>
+        <p class="right-copy">
+          Inspired by the planet Jupiter, this concept blends warm wood textures
+          with cosmic accents to create a relaxing, slightly otherworldly spot.
+        </p>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <div class="mini-label">Specialty</div>
+          <div class="mini-value">Mocha Eclipse</div>
+          <p class="right-copy">Dark chocolate, espresso, steamed oat milk.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-label">Vibe</div>
+          <div class="mini-value">Soft glow</div>
+          <p class="right-copy">Ambient lighting, lo-fi beats, calm energy.</p>
+        </div>
+      </div>
+
+      <div class="right-footer">
+        <span>Concept brand by Jack Buttimer</span>
+        <span id="year"></span>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
