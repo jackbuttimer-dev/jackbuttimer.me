@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jack Buttimer – Portfolio</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Holisti – Holistic Nutrition & Health Coaching</title>
+  <meta
+    name="description"
+    content="Holisti offers holistic nutrition and lifestyle coaching, with a focus on gut health, autoimmune support and sustainable habit change."
+  />
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,34 +23,23 @@
   <style>
     :root {
       --bg: #05070b;
-      --bg-elevated: #10131c;
-      --bg-soft: #151827;
-      --text: #f5f7ff;
-      --muted: #a6adc8;
-      --accent: #ffcc66;
-      --accent-soft: rgba(255, 204, 102, 0.12);
-      --border-subtle: rgba(255, 255, 255, 0.05);
-      --danger: #ff6b81;
-
-      --radius-lg: 20px;
-      --radius-xl: 26px;
-      --shadow-soft: 0 30px 80px rgba(0, 0, 0, 0.6);
-
-      --nav-height: 72px;
+      --bg-soft: #0b1017;
+      --accent: #9bf6c9;
+      --accent-soft: rgba(155, 246, 201, 0.12);
+      --accent-strong: #47c888;
+      --text: #f8fafc;
+      --text-soft: #cbd5f5;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --card-bg: rgba(15, 23, 42, 0.92);
+      --danger: #f97373;
+      --max-width: 1120px;
+      --radius-xl: 18px;
+      --radius-2xl: 26px;
+      --shadow-soft: 0 22px 60px rgba(15, 23, 42, 0.8);
+      --shadow-subtle: 0 14px 35px rgba(15, 23, 42, 0.6);
+      --blur: 18px;
       --transition-fast: 180ms ease-out;
-      --transition-med: 260ms ease-out;
-    }
-
-    /* Light theme override */
-    body[data-theme="light"] {
-      --bg: #f4f5fb;
-      --bg-elevated: #ffffff;
-      --bg-soft: #f3f4ff;
-      --text: #111322;
-      --muted: #636b88;
-      --accent: #f59e0b;
-      --accent-soft: rgba(245, 158, 11, 0.15);
-      --border-subtle: rgba(15, 23, 42, 0.08);
+      --transition-med: 220ms ease-out;
     }
 
     * {
@@ -59,1508 +55,1464 @@
     body {
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #13152a 0, #05070b 50%, #010208 100%);
+      background: radial-gradient(circle at top left, #0b1420 0, #02040a 55%);
       color: var(--text);
       min-height: 100vh;
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Background blob & subtle stars */
-    .bg-layer {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -2;
-      overflow: hidden;
-    }
-
-    .bg-blob {
-      position: absolute;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle at 30% 20%, #ffd28a, #ff7a7a 40%, transparent 70%);
-      opacity: 0.35;
-      filter: blur(8px);
-      border-radius: 999px;
-      animation: float-blob 18s ease-in-out infinite alternate;
-      transform: translate3d(-20%, -10%, 0);
-    }
-
-    .bg-stars {
-      position: absolute;
-      inset: -200px;
-      background-image:
-        radial-gradient(2px 2px at 20% 20%, rgba(255,255,255,0.4), transparent),
-        radial-gradient(2px 2px at 80% 40%, rgba(255,255,255,0.25), transparent),
-        radial-gradient(1.5px 1.5px at 40% 80%, rgba(255,255,255,0.35), transparent);
-      opacity: 0.4;
-    }
-
-    @keyframes float-blob {
-      0% {
-        transform: translate3d(-10%, -5%, 0) scale(1);
-      }
-      100% {
-        transform: translate3d(20%, 10%, 0) scale(1.2);
-      }
-    }
-
-    /* Layout */
     .page {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 20px 16px 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    header {
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem 4rem;
+    }
+
+    @media (min-width: 1024px) {
+      .shell {
+        padding: 1.75rem 0 4.5rem;
+      }
+    }
+
+    .section {
+      padding: 4.5rem 0;
+    }
+
+    .section + .section {
+      border-top: 1px solid rgba(30, 64, 175, 0.35);
+    }
+
+    .page::before {
+      content: "";
+      position: fixed;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(155, 246, 201, 0.08) 0, transparent 55%),
+        radial-gradient(circle at 85% 10%, rgba(59, 130, 246, 0.12) 0, transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* HEADER */
+
+    .header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 40;
       backdrop-filter: blur(18px);
       background: linear-gradient(
         to bottom,
-        rgba(5, 7, 11, 0.8),
-        rgba(5, 7, 11, 0.1)
+        rgba(2, 6, 23, 0.92),
+        rgba(2, 6, 23, 0.82),
+        transparent
       );
-      border-bottom: 1px solid var(--border-subtle);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.8);
     }
 
-    .nav-inner {
-      max-width: 1120px;
+    .header-inner {
+      max-width: var(--max-width);
       margin: 0 auto;
-      height: var(--nav-height);
+      padding: 0.85rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 0 16px;
+      gap: 1.5rem;
     }
 
-    .logo-mark {
+    @media (min-width: 1024px) {
+      .header-inner {
+        padding-inline: 0;
+      }
+    }
+
+    .brand {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-    }
-
-    .logo-circle {
-      width: 32px;
-      height: 32px;
+      gap: 0.65rem;
+      padding: 0.35rem 0.75rem;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffe8ac, #ff9f68);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      color: #181620;
-      box-shadow: 0 0 20px rgba(255, 204, 102, 0.65);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-      align-items: center;
-    }
-
-    nav a {
-      position: relative;
-      font-size: 0.9rem;
+      background: radial-gradient(
+        circle at top left,
+        rgba(155, 246, 201, 0.18) 0,
+        rgba(15, 23, 42, 0.95) 50%
+      );
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.65);
       text-decoration: none;
-      color: var(--muted);
-      padding: 6px 0;
+      color: inherit;
+    }
+
+    .brand-mark {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 140deg,
+        #22c55e,
+        #2dd4bf,
+        #38bdf8,
+        #22c55e
+      );
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8),
+        0 8px 18px rgba(15, 23, 42, 0.9);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: inherit;
+      background: radial-gradient(circle at 30% 20%, #f9fafb, #a7f3d0 55%);
+      mix-blend-mode: screen;
+      opacity: 0.9;
+    }
+
+    .brand-text-main {
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 0.68rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav {
+      display: none;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .nav a {
+      color: var(--text-soft);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 0.25rem;
       transition: color var(--transition-fast);
     }
 
-    nav a::after {
+    .nav a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -4px;
+      bottom: 0;
       width: 0;
       height: 2px;
       border-radius: 999px;
-      background: linear-gradient(90deg, #ffd28a, #ff9f68);
+      background: linear-gradient(to right, #22c55e, #38bdf8);
       transition: width var(--transition-med);
     }
 
-    nav a:hover {
+    .nav a:hover {
       color: var(--text);
     }
 
-    nav a.active {
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav a.is-active {
       color: var(--accent);
     }
 
-    nav a.active::after {
-      width: 18px;
+    .nav a.is-active::after {
+      width: 100%;
     }
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    @media (min-width: 768px) {
+      .nav {
+        display: flex;
+      }
     }
 
-    .theme-toggle {
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      background: rgba(15, 23, 42, 0.6);
-      padding: 6px 10px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      font-size: 0.75rem;
-      color: var(--muted);
-      transition: background var(--transition-fast),
-        transform var(--transition-fast),
-        border-color var(--transition-fast);
+    .nav-cta {
+      display: none;
     }
 
-    .theme-toggle span {
-      font-size: 0.9rem;
+    @media (min-width: 768px) {
+      .nav-cta {
+        display: inline-flex;
+      }
     }
 
-    .theme-toggle:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255, 204, 102, 0.6);
-    }
-
-    .btn-outline {
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      padding: 6px 14px;
-      background: rgba(15, 23, 42, 0.4);
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-decoration: none;
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      gap: 0.45rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
       cursor: pointer;
-      transition: border-color var(--transition-fast),
-        color var(--transition-fast),
+      background: transparent;
+      color: var(--text);
+      text-decoration: none;
+      transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast),
         background var(--transition-fast),
-        transform var(--transition-fast);
+        border-color var(--transition-fast),
+        color var(--transition-fast);
+      white-space: nowrap;
     }
 
-    .btn-outline:hover {
-      border-color: rgba(255, 204, 102, 0.7);
-      color: var(--accent);
-      transform: translateY(-1px);
+    .btn-pill-primary {
+      background: radial-gradient(circle at top left, #22c55e, #059669);
+      border-color: rgba(34, 197, 94, 0.6);
+      box-shadow: 0 18px 45px rgba(5, 150, 105, 0.55);
     }
 
-    main {
-      margin-top: 32px;
+    .btn-pill-primary:hover {
+      transform: translateY(-1px) translateZ(0);
+      box-shadow: 0 24px 55px rgba(5, 150, 105, 0.8);
+    }
+
+    .btn-pill-ghost {
+      border-color: rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .btn-pill-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(148, 163, 184, 0.9);
+    }
+
+    .btn span.arrow {
+      font-size: 1.1rem;
+      margin-left: 0.05rem;
+    }
+
+    .header-right {
       display: flex;
-      flex-direction: column;
-      gap: 72px;
-    }
-
-    /* Sections */
-    section {
-      position: relative;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-
-    .section-subtitle {
-      font-size: 0.95rem;
-      color: var(--muted);
-      max-width: 520px;
-    }
-
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 32px;
       align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding-top: 2.75rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding-top: 3.5rem;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2.75rem;
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 3.5rem;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: radial-gradient(
+        circle at left top,
+        rgba(155, 246, 201, 0.22),
+        rgba(15, 23, 42, 0.98)
+      );
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #f9fafb, #22c55e);
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.15);
+    }
+
+    .eyebrow-text {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .hero-title {
+      font-size: clamp(2.15rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span.accent {
+      background: linear-gradient(to right, #22c55e, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 32rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--text-soft);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-subtitle span.highlight-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-left: 0.35rem;
+      white-space: nowrap;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-footnote {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-footnote-badge {
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.9;
     }
 
     .hero-card {
-      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.06), transparent 55%),
-        var(--bg-elevated);
-      border-radius: var(--radius-xl);
-      padding: 28px 26px;
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-soft);
       position: relative;
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(
+          145deg,
+          rgba(15, 23, 42, 0.98),
+          rgba(15, 23, 42, 0.96)
+        ),
+        radial-gradient(
+          circle at top left,
+          rgba(155, 246, 201, 0.22),
+          transparent 65%
+        );
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.4rem 1.4rem;
       overflow: hidden;
       isolation: isolate;
     }
 
-    .hero-badge-row {
+    @media (min-width: 1024px) {
+      .hero-card {
+        padding: 1.6rem 1.6rem 1.7rem;
+      }
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(56, 189, 248, 0.32),
+          transparent 55%
+        ),
+        radial-gradient(
+          circle at bottom left,
+          rgba(16, 185, 129, 0.3),
+          transparent 55%
+        );
+      opacity: 0.5;
+      mix-blend-mode: screen;
+      z-index: -1;
+    }
+
+    .hero-card-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-      gap: 16px;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
     }
 
-    .hero-badge {
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
+    .hero-card-label {
+      font-size: 0.75rem;
       text-transform: uppercase;
-      padding: 5px 12px;
+      letter-spacing: 0.2em;
+      color: var(--text-soft);
+      opacity: 0.85;
+    }
+
+    .hero-card-title {
+      font-size: 0.98rem;
+      font-weight: 500;
+      margin-top: 0.2rem;
+    }
+
+    .hero-card-tag {
+      font-size: 0.74rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--muted);
-      backdrop-filter: blur(10px);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      background: rgba(15, 23, 42, 0.96);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
     }
 
-    .hero-status-dot {
-      width: 7px;
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-metric-card {
+      padding: 0.75rem 0.8rem;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-metric-label {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      opacity: 0.9;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-metric-value {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .hero-metric-pill {
+      font-size: 0.7rem;
+      margin-top: 0.2rem;
+      opacity: 0.8;
+    }
+
+    .hero-progress-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-soft);
+    }
+
+    .hero-progress-bar {
+      width: 100%;
       height: 7px;
       border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+      background: rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+      border: 1px solid rgba(30, 64, 175, 0.7);
     }
 
-    .hero-name {
-      font-size: 2.2rem;
-      line-height: 1.1;
-      margin-bottom: 8px;
+    .hero-progress-fill {
+      height: 100%;
+      width: 78%;
+      background: linear-gradient(to right, #22c55e, #2dd4bf, #38bdf8);
+      border-radius: inherit;
+      box-shadow: 0 0 18px rgba(34, 197, 94, 0.6);
     }
 
-    .hero-name span {
-      color: var(--accent);
-    }
-
-    .hero-role {
-      font-size: 0.95rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 22px;
-    }
-
-    .hero-tags {
+    .hero-card-footer {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 26px;
+      gap: 0.4rem;
+      align-items: center;
+      margin-top: 0.25rem;
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      opacity: 0.9;
+    }
+
+    .hero-chip {
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    /* SECTION HEADINGS */
+
+    .section-heading {
+      max-width: 640px;
+      margin-bottom: 2.3rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-description {
+      font-size: 0.96rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: 2.75rem;
+        align-items: flex-start;
+      }
+    }
+
+    .about-card {
+      border-radius: var(--radius-xl);
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .about-tagline {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin-bottom: 1.1rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.4rem;
     }
 
     .pill {
-      font-size: 0.75rem;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    body[data-theme="light"] .pill {
-      background: rgba(255, 255, 255, 0.8);
-    }
-
-    .pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .btn-primary {
-      border-radius: 999px;
-      border: none;
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      background: linear-gradient(120deg, #ffd28a, #ff9f68);
-      color: #111827;
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      transition: transform var(--transition-med), box-shadow var(--transition-med),
-        filter var(--transition-fast);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.05);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.7);
-    }
-
-    .hero-footnote {
-      font-size: 0.75rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 6px;
-    }
-
-    .hero-footnote span {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.7rem;
-    }
-
-    .hero-highlight-title {
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .hero-highlight-metric {
-      font-size: 1.6rem;
-      font-weight: 600;
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-
-    .hero-highlight-metric span {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-    .hero-highlight-row {
-      display: flex;
-      justify-content: space-between;
       font-size: 0.76rem;
-      color: var(--muted);
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.96);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
     }
 
-    .hero-highlight-row strong {
+    .about-note {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      opacity: 0.75;
+      margin-top: 0.7rem;
+    }
+
+    .about-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+
+    .about-list-item {
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.55);
+      padding: 0.9rem 1rem;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .about-list-item span {
       display: block;
-      font-size: 0.82rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
       color: var(--text);
     }
 
-    .hero-highlight-chip {
-      margin-top: auto;
-      font-size: 0.7rem;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px dashed rgba(248, 250, 252, 0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--muted);
+    /* SERVICES */
+
+    .services-grid {
+      display: grid;
+      gap: 1rem;
     }
 
-    .hero-highlight-chip span {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 6px rgba(34, 197, 94, 0.9);
+    @media (min-width: 900px) {
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
-    /* Right side hero: skills grid */
-    .hero-skills-card {
-      background: var(--bg-elevated);
+    .service-card {
       border-radius: var(--radius-xl);
-      padding: 22px 20px 20px;
+      background: var(--card-bg);
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      padding: 1.3rem 1.2rem 1.4rem;
+      box-shadow: var(--shadow-subtle);
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      max-height: 410px;
+      gap: 0.65rem;
     }
 
-    .hero-skills-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .hero-skills-header h3 {
-      font-size: 0.9rem;
-    }
-
-    .hero-skills-header span {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .skill-tile {
-      background: var(--bg-soft);
-      border-radius: 14px;
-      padding: 10px 8px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
+    .service-label {
       font-size: 0.78rem;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      cursor: default;
-      transition: transform var(--transition-med), box-shadow var(--transition-med),
-        border-color var(--transition-med), background var(--transition-med);
-    }
-
-    .skill-tile strong {
-      font-size: 0.8rem;
-    }
-
-    .skill-tile span {
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    .skill-tile:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
-      border-color: rgba(255, 204, 102, 0.65);
-      background: linear-gradient(140deg, rgba(255, 255, 255, 0.03), var(--bg-soft));
-    }
-
-    .hero-skills-footer {
-      margin-top: auto;
-      font-size: 0.75rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 6px;
-      align-items: center;
-      border-top: 1px solid rgba(148, 163, 184, 0.19);
-      padding-top: 10px;
-    }
-
-    .hero-skills-footer span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-skills-footer span::before {
-      content: "";
-      width: 16px;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #ffd28a, #ff9f68);
-    }
-
-    /* About & skills */
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 26px;
-      align-items: start;
-    }
-
-    .card {
-      background: var(--bg-elevated);
-      border-radius: var(--radius-lg);
-      padding: 20px 20px 18px;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .about-meta {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.8rem;
-    }
-
-    .about-meta-item {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--muted);
-    }
-
-    body[data-theme="light"] .about-meta-item {
-      background: rgba(255, 255, 255, 0.9);
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .skill-chip {
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.78rem;
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.7);
-      transition: background var(--transition-med),
-        transform var(--transition-med),
-        border-color var(--transition-med);
-    }
-
-    .skill-chip:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 204, 102, 0.07);
-      border-color: rgba(255, 204, 102, 0.7);
-    }
-
-    body[data-theme="light"] .skill-chip {
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    /* Projects */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .project-card {
-      position: relative;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      padding: 16px 16px 14px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform var(--transition-med), box-shadow var(--transition-med),
-        border-color var(--transition-med), background var(--transition-med);
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 204, 102, 0.7);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 55%),
-        var(--bg-elevated);
-    }
-
-    .project-tag {
-      font-size: 0.7rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .project-title {
-      font-size: 0.95rem;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .project-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .project-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .project-footer a {
       color: var(--accent);
-      text-decoration: none;
-      font-size: 0.78rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
     }
 
-    .project-footer a:hover {
-      text-decoration: underline;
+    .service-title {
+      font-size: 1.02rem;
     }
 
-    .project-image-placeholder {
-      height: 100%;
+    .service-copy {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .service-meta {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-top: 0.3rem;
+      opacity: 0.8;
+    }
+
+    /* STEPS */
+
+    .steps-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .step-card {
       border-radius: 18px;
-      border: 1px dashed rgba(148, 163, 184, 0.5);
-      background:
-        linear-gradient(135deg, rgba(30, 64, 175, 0.4), rgba(126, 34, 206, 0.3)),
-        repeating-linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.08),
-          rgba(255, 255, 255, 0.08) 1px,
-          transparent 1px,
-          transparent 6px
-        );
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 16px 18px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 1rem 1rem 1.1rem;
     }
 
-    .project-image-placeholder h3 {
-      font-size: 0.95rem;
-      margin-bottom: 4px;
-    }
-
-    .project-image-placeholder p {
-      font-size: 0.82rem;
-      color: var(--muted);
-      max-width: 280px;
-    }
-
-    .project-placeholder-meta {
-      align-self: flex-end;
-      text-align: right;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    /* Experience */
-    .experience-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 26px;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 18px;
-      border-left: 1px solid rgba(148, 163, 184, 0.5);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 10px;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -10px;
-      top: 2px;
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px var(--accent-soft);
-    }
-
-    .timeline-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    .timeline-role {
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .timeline-company {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .timeline-desc {
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .experience-summary {
-      font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-
-    .experience-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .experience-list li {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-    }
-
-    .experience-list li::before {
-      content: "•";
-      color: var(--accent);
-      margin-top: -1px;
-    }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 26px;
-      align-items: start;
-    }
-
-    .contact-details {
-      font-size: 0.9rem;
-      color: var(--muted);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: var(--bg-soft);
-      border: 1px solid var(--border-subtle);
-      font-size: 0.85rem;
-    }
-
-    .contact-icon {
+    .step-number {
       width: 26px;
       height: 26px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 0.78rem;
+      margin-bottom: 0.5rem;
+      background: radial-gradient(
+        circle at top left,
+        rgba(155, 246, 201, 0.3),
+        rgba(15, 23, 42, 0.95)
+      );
+    }
+
+    .step-title {
+      font-size: 0.96rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-copy {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .testimonial-card {
+      border-radius: var(--radius-xl);
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 1.1rem 1.1rem 1.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-quote {
       font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin-bottom: 0.7rem;
     }
 
-    .contact-link {
-      color: var(--accent);
-      text-decoration: none;
+    .testimonial-name {
+      font-size: 0.9rem;
+      font-weight: 500;
     }
 
-    .contact-link:hover {
-      text-decoration: underline;
+    .testimonial-meta {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      opacity: 0.8;
     }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
+    .testimonial-chip {
+      position: absolute;
+      top: 0.9rem;
+      right: 1rem;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.9;
+    }
+
+    /* CONTACT */
+
+    .contact-layout {
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    @media (min-width: 850px) {
+      .contact-layout {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        align-items: flex-start;
+        gap: 2.2rem;
+      }
+    }
+
+    .contact-card {
+      border-radius: var(--radius-xl);
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.4rem 1.35rem 1.5rem;
+      box-shadow: var(--shadow-subtle);
     }
 
     .contact-form-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .field {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-label {
       font-size: 0.8rem;
+      color: var(--text-soft);
     }
 
-    .field label {
-      color: var(--muted);
-    }
-
-    .field input,
-    .field textarea {
-      border-radius: 12px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.9);
+    .contact-input,
+    .contact-textarea {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 0.6rem 0.8rem;
+      font-size: 0.85rem;
       color: var(--text);
-      padding: 9px 10px;
-      font-size: 0.84rem;
-      resize: vertical;
-      min-height: 42px;
       outline: none;
-      transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
-        background var(--transition-fast), transform var(--transition-fast);
+      transition: border-color var(--transition-med), box-shadow var(--transition-med),
+        background var(--transition-med);
     }
 
-    body[data-theme="light"] .field input,
-    body[data-theme="light"] .field textarea {
-      background: rgba(255, 255, 255, 0.96);
+    .contact-textarea {
+      border-radius: 18px;
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.5;
+      font-family: inherit;
     }
 
-    .field input:focus,
-    .field textarea:focus {
-      border-color: rgba(255, 204, 102, 0.9);
-      box-shadow: 0 0 0 1px rgba(255, 204, 102, 0.5);
-      transform: translateY(-1px);
+    .contact-input:focus,
+    .contact-textarea:focus {
+      border-color: rgba(59, 130, 246, 0.9);
+      box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.9);
+      background: rgba(15, 23, 42, 0.98);
     }
 
-    .contact-note {
+    .contact-helper {
       font-size: 0.75rem;
-      color: var(--muted);
-      margin-top: 4px;
+      color: var(--text-soft);
+      opacity: 0.8;
+      margin-top: 0.25rem;
     }
 
-    footer {
-      margin-top: 36px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: center;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-subtle);
+    .contact-meta-card {
+      border-radius: 18px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      padding: 1rem 1rem 1.1rem;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      line-height: 1.65;
     }
 
-    footer span {
-      color: var(--accent);
+    .contact-meta-card strong {
+      color: var(--text);
+      font-weight: 500;
     }
 
-    /* Scroll reveal base state */
-    .reveal {
+    .contact-meta-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      margin-top: auto;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.4rem 1.5rem 1.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    @media (min-width: 1024px) {
+      .footer-inner {
+        padding-inline: 0;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .footer-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    /* ANIMATIONS */
+
+    .fade-up {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 500ms ease-out, transform 500ms ease-out;
+      transform: translateY(14px);
+      transition: opacity 420ms ease-out, transform 420ms ease-out;
     }
 
-    .reveal.visible {
+    .fade-up.in-view {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Responsive */
-    @media (max-width: 880px) {
-      .hero,
-      .about-grid,
-      .projects-grid,
-      .experience-grid,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-highlight {
-        display: none;
-      }
+    .fade-up-delay-1 {
+      transition-delay: 90ms;
     }
 
-    @media (max-width: 720px) {
-      .nav-inner {
-        gap: 14px;
-      }
-
-      nav ul {
-        gap: 12px;
-      }
-
-      .hero-name {
-        font-size: 1.8rem;
-      }
-
-      main {
-        gap: 56px;
-      }
+    .fade-up-delay-2 {
+      transition-delay: 170ms;
     }
 
-    @media (max-width: 600px) {
-      header {
-        position: fixed;
-        width: 100%;
-      }
+    .fade-up-delay-3 {
+      transition-delay: 260ms;
+    }
 
-      .page {
-        padding-top: calc(var(--nav-height) + 20px);
-      }
+    .fade-up-delay-4 {
+      transition-delay: 340ms;
+    }
 
-      .nav-inner {
-        justify-content: space-between;
-      }
+    ::placeholder {
+      color: rgba(148, 163, 184, 0.7);
+    }
 
-      nav ul {
-        display: none;
-      }
+    a {
+      color: var(--accent);
+    }
 
-      .hero-card {
-        padding: 22px 18px;
-      }
-
-      .hero-skills-card {
-        padding: 18px 16px;
-      }
-
-      .skill-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-form-row {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    a:hover {
+      color: var(--accent-strong);
     }
   </style>
 </head>
-<body data-theme="dark">
-  <div class="bg-layer">
-    <div class="bg-blob" id="bg-blob"></div>
-    <div class="bg-stars"></div>
-  </div>
-
-  <header>
-    <div class="nav-inner">
-      <div class="logo-mark">
-        <div class="logo-circle">JB</div>
-        <span>Portfolio</span>
-      </div>
-
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle" type="button">
-          <span aria-hidden="true">🌙</span>
-          <small>Dark</small>
-        </button>
-        <a class="btn-outline" href="#contact">Let’s talk</a>
-      </div>
-    </div>
-  </header>
-
+<body>
   <div class="page">
-    <main>
-      <!-- Hero -->
-      <section id="hero" class="hero reveal">
-        <div class="hero-card">
-          <div class="hero-badge-row">
-            <div class="hero-badge">
-              <span class="hero-status-dot"></span>
-              Available for new roles
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="#top" class="brand">
+          <div class="brand-mark"></div>
+          <div>
+            <div class="brand-text-main">Holisti</div>
+            <div class="brand-text-sub">Nutrition & Lifestyle</div>
+          </div>
+        </a>
+
+        <nav class="nav">
+          <a href="#about" class="js-nav-link">About</a>
+          <a href="#services" class="js-nav-link">Services</a>
+          <a href="#process" class="js-nav-link">How it works</a>
+          <a href="#testimonials" class="js-nav-link">Stories</a>
+          <a href="#contact" class="js-nav-link">Contact</a>
+        </nav>
+
+        <div class="header-right">
+          <a href="#contact" class="btn btn-pill-primary nav-cta">
+            Free discovery call
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top" class="shell">
+      <!-- HERO -->
+      <section class="hero section" id="hero">
+        <div class="hero-grid">
+          <div class="fade-up">
+            <div class="eyebrow">
+              <div class="eyebrow-dot"></div>
+              <span class="eyebrow-text">Holistic health, made human.</span>
             </div>
-            <span style="font-size:0.74rem;color:var(--muted);">
-              Chester · Open to remote / relocation
-            </span>
+
+            <h1 class="hero-title">
+              Heal your
+              <span class="accent">gut, energy & mindset</span>
+              — one habit at a time.
+            </h1>
+
+            <p class="hero-subtitle">
+              Holisti blends science-backed nutrition with a realistic,
+              human approach to change. No crash plans, no shame — just
+              calm, consistent support to help you feel at home in your body
+              again
+              <span class="highlight-chip">Online coaching • UK & EU clients</span>
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-pill-primary">
+                Book a free 20-min call
+                <span class="arrow">↗</span>
+              </a>
+              <a href="#services" class="btn btn-pill-ghost">
+                Explore coaching
+              </a>
+            </div>
+
+            <div class="hero-footnote">
+              <span class="hero-footnote-badge">Focus</span>
+              Gut health · Autoimmune support · Stress & lifestyle
+            </div>
           </div>
 
-          <h1 class="hero-name">
-            Hey, I’m <span>Jack Buttimer</span>
-          </h1>
-          <p class="hero-role">
-            Field Service Engineer transitioning into modern IT &amp; development.
-            I love building clean, minimal experiences and solving real-world tech problems.
+          <aside class="hero-card fade-up fade-up-delay-2" aria-label="Example client snapshot">
+            <div class="hero-card-top">
+              <div>
+                <div class="hero-card-label">Client snapshot</div>
+                <div class="hero-card-title">
+                  32-year-old with gut issues & burnout.
+                </div>
+              </div>
+              <span class="hero-card-tag">Week 8</span>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="hero-metric-card">
+                <div class="hero-metric-label">Daily energy</div>
+                <div class="hero-metric-value">+45%</div>
+                <div class="hero-metric-pill">Fewer crashes, better focus.</div>
+              </div>
+              <div class="hero-metric-card">
+                <div class="hero-metric-label">Digestive flare-ups</div>
+                <div class="hero-metric-value">–60%</div>
+                <div class="hero-metric-pill">Less pain, more freedom.</div>
+              </div>
+            </div>
+
+            <div class="hero-progress-row">
+              <div class="hero-progress-label">
+                <span>Nervous system regulation</span>
+                <span>78%</span>
+              </div>
+              <div class="hero-progress-bar">
+                <div class="hero-progress-fill"></div>
+              </div>
+            </div>
+
+            <div class="hero-card-footer">
+              <span class="hero-chip">Gentle habit change</span>
+              <span class="hero-chip">Root-cause approach</span>
+              <span>Results are personal — this is an anonymised example.</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="section-heading fade-up">
+          <div class="section-eyebrow">About Holisti</div>
+          <h2 class="section-title">From lived experience to gentle, structured support.</h2>
+          <p class="section-description">
+            I’m Jack, a nutrition and health coach in training with a
+            background in autoimmune and digestive issues myself. Holisti
+            grew out of years of trial, error and research — and the realisation
+            that most people don’t need more noise, they need calm, evidence-informed guidance.
           </p>
-
-          <div class="hero-tags">
-            <div class="pill"><span class="pill-dot"></span> Web &amp; UI Foundations</div>
-            <div class="pill"><span class="pill-dot"></span> Hardware &amp; Troubleshooting</div>
-            <div class="pill"><span class="pill-dot"></span> Self-taught &amp; fast learner</div>
-          </div>
-
-          <div class="hero-cta-row">
-            <a href="#projects" class="btn-primary">
-              View projects
-              <span>↗</span>
-            </a>
-            <a href="#contact" class="btn-outline">
-              Get in touch
-            </a>
-          </div>
-
-          <div class="hero-footnote">
-            <span>i</span>
-            <p>
-              Currently improving my HTML, CSS &amp; JavaScript skills while working in the field.
-            </p>
-          </div>
-
-          <aside class="hero-highlight" aria-hidden="true">
-            <div class="hero-highlight-title">Snapshot</div>
-            <div class="hero-highlight-metric">
-              3+
-              <span>years client-facing tech roles</span>
-            </div>
-            <div class="hero-highlight-row">
-              <div>
-                <strong>Hardware</strong>
-                PCs · laptops · peripherals
-              </div>
-              <div>
-                <strong>Focus</strong>
-                Clean &amp; reliable builds
-              </div>
-            </div>
-            <div class="hero-highlight-chip">
-              <span></span>
-              Open to roles in the UK &amp; Ireland
-            </div>
-          </aside>
         </div>
 
-        <aside class="hero-skills-card">
-          <div class="hero-skills-header">
-            <h3>Core Stack</h3>
-            <span>What I’m building with</span>
-          </div>
-          <div class="skill-grid">
-            <div class="skill-tile">
-              <strong>HTML</strong>
-              <span>Semantic, accessible layouts</span>
-            </div>
-            <div class="skill-tile">
-              <strong>CSS</strong>
-              <span>Responsive UI &amp; animations</span>
-            </div>
-            <div class="skill-tile">
-              <strong>JavaScript</strong>
-              <span>Interactivity &amp; logic</span>
-            </div>
-            <div class="skill-tile">
-              <strong>Git / GitHub</strong>
-              <span>Version control &amp; deploy</span>
-            </div>
-            <div class="skill-tile">
-              <strong>Netlify</strong>
-              <span>Static hosting &amp; forms</span>
-            </div>
-            <div class="skill-tile">
-              <strong>PC Hardware</strong>
-              <span>Builds, upgrades, diagnostics</span>
-            </div>
-          </div>
-          <div class="hero-skills-footer">
-            <span>Actively learning: deeper JS, UI/UX</span>
-            <span>Next up: React &amp; APIs</span>
-          </div>
-        </aside>
-      </section>
-
-      <!-- About -->
-      <section id="about" class="reveal">
-        <div class="section-label">About</div>
         <div class="about-grid">
-          <article class="card">
-            <h2 class="section-title">From hardware to the browser</h2>
-            <p>
-              I’ve spent the last few years helping people with hands-on tech issues:
-              building and fixing PCs, supporting users, and keeping systems running.
-              That experience taught me how important reliable, simple-to-use tech really is.
+          <div class="about-card fade-up fade-up-delay-1">
+            <div class="about-tagline">I know what it’s like to feel stuck in your own body.</div>
+            <p class="about-text">
+              For years, I dealt with reflux, gut pain and the anxiety that comes
+              with never knowing how your body will react. Tracking symptoms,
+              trying protocols, reading research — it all helped, but only once I
+              connected the dots between food, stress, sleep, nervous system
+              and lifestyle did things really start to shift.
             </p>
-            <br />
-            <p>
-              Now I’m bringing that mindset into web development. I’m focused on learning
-              clean HTML, modern CSS, and JavaScript so I can create portfolios, landing pages,
-              and tools that look sharp, load quickly, and are easy to maintain.
+            <p class="about-text">
+              Holisti is here to give you the kind of support I wish I’d had:
+              someone in your corner who understands the science, but also the
+              <em>reality</em> of real life, work, family and stress.
             </p>
 
-            <div class="about-meta">
-              <div class="about-meta-item">Field Service Engineer at CDW (UK)</div>
-              <div class="about-meta-item">Open to IT &amp; junior dev roles</div>
-              <div class="about-meta-item">Interested in remote &amp; hybrid work</div>
+            <div class="about-highlights">
+              <span class="pill">Gut & digestive focus</span>
+              <span class="pill">Autoimmune-aware approach</span>
+              <span class="pill">Real-world, flexible plans</span>
+              <span class="pill">Compassion-first coaching</span>
             </div>
-          </article>
 
-          <aside class="card">
-            <h3 style="font-size:0.98rem;margin-bottom:6px;">Skills at a glance</h3>
-            <p style="font-size:0.86rem;">
-              A mix of technical knowledge and real-world problem solving.
+            <p class="about-note">
+              *I’m currently completing a professional nutrition & health coaching diploma.
+              Coaching is educational and supportive and does not replace medical care.
             </p>
-            <div class="skills-list">
-              <span class="skill-chip">Troubleshooting &amp; diagnostics</span>
-              <span class="skill-chip">Customer support &amp; communication</span>
-              <span class="skill-chip">Laptop &amp; desktop repair</span>
-              <span class="skill-chip">Device imaging &amp; deployment</span>
-              <span class="skill-chip">Basic networking understanding</span>
-              <span class="skill-chip">HTML &amp; CSS layouts</span>
-              <span class="skill-chip">Version control with Git</span>
-              <span class="skill-chip">Cloud-hosted static sites</span>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section id="projects" class="reveal">
-        <div class="section-label">Projects</div>
-        <h2 class="section-title">Things I’m building &amp; experimenting with</h2>
-        <p class="section-subtitle">
-          A mix of live experiments and practice projects that show how I approach structure,
-          styling, and interactivity as I grow my skills.
-        </p>
-
-        <div class="projects-grid" style="margin-top:18px;">
-          <div class="project-list">
-            <article class="project-card">
-              <div class="project-tag">Portfolio</div>
-              <h3 class="project-title">jackbuttimer.dev</h3>
-              <p class="project-meta">
-                A single-page dark-themed portfolio built with semantic HTML, modern CSS,
-                and a bit of vanilla JavaScript for animations and theme toggling.
-              </p>
-              <div class="project-footer">
-                <span>Tech: HTML · CSS · JS · Netlify</span>
-                <!-- Replace # with your actual URL once live -->
-                <a href="#" target="_blank" rel="noreferrer">
-                  Visit site
-                  <span>↗</span>
-                </a>
-              </div>
-            </article>
-
-            <article class="project-card">
-  <div class="project-tag">Branding · UI/UX</div>
-  <h3 class="project-title">Jupiters Coffee – Brand & Landing Page</h3>
-  <p class="project-meta">
-    A warm, space-inspired coffee brand designed in Figma, exploring logo,
-    hero section, and layout. Used as a practice project for visual design,
-    hierarchy, and prepping assets for a future coded landing page.
-  </p>
-  <div class="project-footer">
-    <span>Tools: Figma · Branding · UI design</span>
-    <a
-      href="https://www.figma.com/design/cHWUtbdL2k7jbH48Xnzh3h/Coffee-Shop?node-id=0-1"
-      target="_blank"
-      rel="noreferrer"
-    >
-      View Jupiters in Figma
-      <span>↗</span>
-    </a>
-  </div>
-</article>
-
-
-            <article class="project-card">
-              <div class="project-tag">Practice</div>
-              <h3 class="project-title">Responsive Components Library</h3>
-              <p class="project-meta">
-                A collection of reusable cards, buttons, and layouts that I use
-                in new projects. Focused on clean spacing, responsive grids, and
-                re-usable class names.
-              </p>
-              <div class="project-footer">
-                <span>Tech: HTML · CSS utility classes</span>
-                <a href="#" target="_blank" rel="noreferrer">
-                  Coming soon
-                  <span>…</span>
-                </a>
-              </div>
-            </article>
           </div>
 
-          <aside class="project-image-placeholder">
-            <div>
-              <h3>Project visuals</h3>
-              <p>
-                This area is ready for screenshots or mockups of your projects.
-                For now, it acts as a stylised placeholder so the layout still
-                feels complete even without images.
-              </p>
-            </div>
-            <div class="project-placeholder-meta">
-              <div>Tip: export your designs</div>
-              <div>Drop PNGs here once ready.</div>
-            </div>
-          </aside>
+          <ul class="about-list fade-up fade-up-delay-2">
+            <li class="about-list-item">
+              <span>We go root-cause, not quick-fix.</span>
+              We look at digestion, stress, sleep, blood sugar balance and habits —
+              not just your plate.
+            </li>
+            <li class="about-list-item">
+              <span>We move at your nervous system’s pace.</span>
+              No “all-or-nothing” overhauls. Tiny, doable shifts that add up.
+            </li>
+            <li class="about-list-item">
+              <span>We build skills, not dependency.</span>
+              The goal is that you leave coaching with tools you can use for life.
+            </li>
+          </ul>
         </div>
       </section>
 
-      <!-- Experience -->
-      <section id="experience" class="reveal">
-        <div class="section-label">Experience</div>
-        <div class="experience-grid">
-          <article class="card">
-            <h2 class="section-title">Recent roles &amp; responsibilities</h2>
-            <p class="experience-summary">
-              I’ve worked across customer-facing and technical roles, from hospitality
-              management to field engineering. That blend means I can communicate clearly
-              with non-technical users while still understanding what’s happening under the hood.
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <div class="section-heading fade-up">
+          <div class="section-eyebrow">Ways to work together</div>
+          <h2 class="section-title">Holistic nutrition & lifestyle coaching that fits your life.</h2>
+          <p class="section-description">
+            Coaching is 1:1, online and tailored to you. You don’t need to be
+            “perfect” or have everything figured out — you just need to be ready
+            to explore the next version of feeling well.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card fade-up fade-up-delay-1">
+            <div class="service-label">Core package</div>
+            <h3 class="service-title">Foundations: 8-week reset</h3>
+            <p class="service-copy">
+              A structured 8-week journey to stabilise energy, reduce digestive
+              discomfort and build simple food and lifestyle rhythms that work
+              with your real world.
             </p>
-            <ul class="experience-list">
-              <li>Supporting users on-site with hardware replacements, imaging, and setup.</li>
-              <li>Diagnosing and resolving laptop, desktop, and peripheral issues.</li>
-              <li>Collaborating with support teams and vendors to keep services running.</li>
-              <li>Managing time, routes, and workload as a field engineer.</li>
-            </ul>
+            <p class="service-meta">
+              Weekly sessions · Simple meal structure · Lifestyle habits · Check-ins & reflection.
+            </p>
           </article>
 
-          <aside class="card">
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-meta">Current</div>
-                <div class="timeline-role">Field Service Engineer</div>
-                <div class="timeline-company">CDW (UK)</div>
-                <p class="timeline-desc">
-                  On-site support for enterprise clients, focused on device swaps, imaging,
-                  troubleshooting, and user support in live environments.
-                </p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-meta">Previous</div>
-                <div class="timeline-role">Customer &amp; technical support roles</div>
-                <div class="timeline-company">Various companies</div>
-                <p class="timeline-desc">
-                  Roles across hospitality, customer service, and tech support that sharpened
-                  my communication skills and patience — useful when tech is misbehaving.
-                </p>
-              </div>
-            </div>
-          </aside>
+          <article class="service-card fade-up fade-up-delay-2">
+            <div class="service-label">Gut & autoimmune</div>
+            <h3 class="service-title">Digestive & immune support</h3>
+            <p class="service-copy">
+              Space to map your symptoms, triggers and flares and create a
+              nervous-system-friendly plan for supporting your gut, inflammation
+              and daily life alongside your medical care.
+            </p>
+            <p class="service-meta">
+              Symptom mapping · Food & lifestyle experiments · Stress & sleep support.
+            </p>
+          </article>
+
+          <article class="service-card fade-up fade-up-delay-3">
+            <div class="service-label">Light touch</div>
+            <h3 class="service-title">Monthly momentum</h3>
+            <p class="service-copy">
+              For people who already have a base in nutrition but want a
+              regular check-in, troubleshooting and accountability as they keep
+              building on the work.
+            </p>
+            <p class="service-meta">
+              Monthly sessions · Progress reviews · Adjustments & fine-tuning.
+            </p>
+          </article>
         </div>
       </section>
 
-      <!-- Contact -->
-      <section id="contact" class="reveal">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title">Let’s build something together</h2>
-        <p class="section-subtitle">
-          Whether you’re hiring, looking for junior support, or just want to talk about
-          web projects &amp; tech, drop me a message.
-        </p>
+      <!-- PROCESS -->
+      <section class="section" id="process">
+        <div class="section-heading fade-up">
+          <div class="section-eyebrow">How it works</div>
+          <h2 class="section-title">Simple, calm steps — no overwhelm.</h2>
+          <p class="section-description">
+            The goal is to help you feel safe, seen and supported. Here’s what
+            working together usually looks like.
+          </p>
+        </div>
 
-        <div class="contact-grid" style="margin-top:18px;">
-          <article class="card">
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-icon">✉️</div>
-                <div>
-                  Email
-                  <br />
-                  <a
-                    href="mailto:jackbuttimer.dev@gmail.com"
-                    class="contact-link"
-                  >
-                    jackbuttimer.dev@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div>
-                  Location
-                  <br />
-                  Chester, UK · open to Cork &amp; beyond
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">💼</div>
-                <div>
-                  Focus
-                  <br />
-                  IT support · hardware · junior web roles
-                </div>
-              </div>
-            </div>
+        <div class="steps-grid">
+          <article class="step-card fade-up fade-up-delay-1">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Free 20-minute call</h3>
+            <p class="step-copy">
+              A relaxed chat to hear your story, answer questions and see if we’re a good fit.
+              No pressure, no hard sell — ever.
+            </p>
           </article>
 
-          <aside class="card">
-            <!-- Netlify form-ready -->
-        <form
-  class="contact-form"
-  action="https://formsubmit.co/jackbuttimer.dev@gmail.com"
-  method="POST"
->
-  <!-- FormSubmit options -->
-  <input type="hidden" name="_subject" value="New message from jackbuttimer.me" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_next" value="https://jackbuttimer.me/#contact" />
-  <!-- Honeypot for spam bots -->
-  <input type="text" name="_honey" style="display:none" />
+          <article class="step-card fade-up fade-up-delay-2">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Deep-dive intake & plan</h3>
+            <p class="step-copy">
+              We map your symptoms, lifestyle, stress and goals.
+              From there, we co-create a realistic plan with clear, gentle steps.
+            </p>
+          </article>
 
-  <div class="contact-form-row">
-    <div class="field">
-      <label for="name">Name</label>
-      <input
-        id="name"
-        name="name"
-        type="text"
-        placeholder="Your name"
-        required
-      />
-    </div>
-    <div class="field">
-      <label for="email">Email</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="you@example.com"
-        required
-      />
-    </div>
-  </div>
+          <article class="step-card fade-up fade-up-delay-3">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Ongoing support</h3>
+            <p class="step-copy">
+              We meet regularly to review what’s working, adjust what isn’t and
+              keep building your toolkit for long-term wellbeing.
+            </p>
+          </article>
+        </div>
+      </section>
 
-  <div class="field">
-    <label for="message">Message</label>
-    <textarea
-      id="message"
-      name="message"
-      rows="4"
-      placeholder="Tell me a bit about what you’re working on…"
-      required
-    ></textarea>
-  </div>
+      <!-- TESTIMONIALS (placeholders for now) -->
+      <section class="section" id="testimonials">
+        <div class="section-heading fade-up">
+          <div class="section-eyebrow">Stories</div>
+          <h2 class="section-title">What clients will say about Holisti.</h2>
+          <p class="section-description">
+            While I’m still completing my diploma, the vision is simple:
+            people who feel calmer, more resourced and more at home in their
+            bodies — without having to obsess over every bite.
+          </p>
+        </div>
 
-  <button class="btn-primary" type="submit">
-    Send message
-  </button>
+        <div class="testimonials-grid">
+          <article class="testimonial-card fade-up fade-up-delay-1">
+            <div class="testimonial-chip">Future client</div>
+            <p class="testimonial-quote">
+              “Working with Holisti helped me finally understand what my body
+              had been trying to tell me for years. I feel calmer, clearer and
+              like I actually have tools I can fall back on when life gets busy.”
+            </p>
+            <div class="testimonial-name">Name to come</div>
+            <div class="testimonial-meta">Gut health & energy support</div>
+          </article>
 
-  <p class="contact-note">
-    Your message will be sent securely and delivered straight to
-    <strong>jackbuttimer.dev@gmail.com</strong>.
-  </p>
-</form>
+          <article class="testimonial-card fade-up fade-up-delay-2">
+            <div class="testimonial-chip">Future client</div>
+            <p class="testimonial-quote">
+              “Instead of being told to be ‘perfect’, I felt genuinely listened to.
+              Tiny changes have made a huge difference — and I finally trust
+              myself around food again.”
+            </p>
+            <div class="testimonial-name">Name to come</div>
+            <div class="testimonial-meta">Stress, food relationship & routine</div>
+          </article>
+        </div>
+      </section>
 
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="section-heading fade-up">
+          <div class="section-eyebrow">Contact</div>
+          <h2 class="section-title">Ready to explore working together?</h2>
+          <p class="section-description">
+            Share a little about what you’re experiencing and what you’re
+            hoping for. I’ll get back to you personally to suggest next steps
+            and, if helpful, a free 20-minute discovery call.
+          </p>
+        </div>
 
+        <div class="contact-layout">
+          <div class="contact-card fade-up fade-up-delay-1">
+            <!-- No Netlify here – front-end only form wired to mailto in JS -->
+            <form id="contact-form" autocomplete="on">
+              <div class="contact-form-row">
+                <label class="contact-label" for="name">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  class="contact-input"
+                  placeholder="How would you like me to address you?"
+                  required
+                />
+              </div>
+
+              <div class="contact-form-row">
+                <label class="contact-label" for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  class="contact-input"
+                  placeholder="Where can I reply?"
+                  required
+                />
+              </div>
+
+              <div class="contact-form-row">
+                <label class="contact-label" for="support">What do you need support with?</label>
+                <input
+                  id="support"
+                  name="support"
+                  type="text"
+                  class="contact-input"
+                  placeholder="e.g. gut issues, low energy, autoimmune, stress…"
+                />
+              </div>
+
+              <div class="contact-form-row">
+                <label class="contact-label" for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="contact-textarea"
+                  placeholder="Share as much or as little as you like about what’s going on and what you’re hoping to change."
+                  required
+                ></textarea>
+                <p class="contact-helper">
+                  This message will open in your email app as a draft to
+                  <strong>jackbuttimer.dev@gmail.com</strong> so you can review it before sending.
+                </p>
+              </div>
+
+              <button type="submit" class="btn btn-pill-primary">
+                Open email draft
+                <span class="arrow">↗</span>
+              </button>
+            </form>
+          </div>
+
+          <aside class="contact-meta-card fade-up fade-up-delay-2">
+            <p>
+              <strong>What to expect:</strong> you’ll send an email straight to my inbox.
+              I’ll read it personally and usually reply within a few days with
+              a short reflection and, if it makes sense, an invite to a free call.
+            </p>
+            <p style="margin-top: 0.6rem;">
+              Coaching is currently <strong>online</strong> and available for clients in the
+              UK, EU and similar time zones.
+            </p>
+
+            <div class="contact-meta-pill-row">
+              <span class="pill">1:1 online sessions</span>
+              <span class="pill">Gentle pace</span>
+              <span class="pill">Evidence-informed</span>
+              <span class="pill">Autoimmune-aware</span>
+            </div>
           </aside>
         </div>
       </section>
     </main>
 
-    <footer>
-      Built with <span>HTML</span>, <span>CSS</span> and a lot of curiosity. ©
-      <span id="year"></span> Jack Buttimer.
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Holisti · Created by Jack Buttimer</span>
+        <div class="footer-links">
+          <a href="mailto:jackbuttimer.dev@gmail.com">Email</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
     </footer>
   </div>
 
   <script>
-    // Theme toggle
-    const body = document.body;
-    const themeToggle = document.getElementById("theme-toggle");
+    // Fade-up animation
+    const fadeEls = document.querySelectorAll(".fade-up");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    fadeEls.forEach((el) => observer.observe(el));
 
-    function setTheme(theme) {
-      body.setAttribute("data-theme", theme);
-      const isDark = theme === "dark";
-      themeToggle.querySelector("span").textContent = isDark ? "🌙" : "☀️";
-      themeToggle.querySelector("small").textContent = isDark ? "Dark" : "Light";
-      try {
-        localStorage.setItem("theme", theme);
-      } catch (e) {}
-    }
-
-    // Load saved theme
-    (function () {
-      try {
-        const saved = localStorage.getItem("theme");
-        if (saved === "light" || saved === "dark") {
-          setTheme(saved);
-        }
-      } catch (e) {}
-    })();
-
-    themeToggle.addEventListener("click", () => {
-      const current = body.getAttribute("data-theme") || "dark";
-      setTheme(current === "dark" ? "light" : "dark");
-    });
-
-    // Nav highlight on scroll
-    const navLinks = document.querySelectorAll(".nav-link");
+    // Nav link active state on scroll
+    const navLinks = document.querySelectorAll(".js-nav-link");
     const sections = Array.from(navLinks).map((link) =>
       document.querySelector(link.getAttribute("href"))
     );
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.id;
-          const link = document.querySelector('.nav-link[href="#' + id + '"]');
-          if (!link) return;
-          if (entry.isIntersecting) {
-            navLinks.forEach((l) => l.classList.remove("active"));
-            link.classList.add("active");
-          }
-        });
-      },
-      {
-        rootMargin: "-55% 0px -40% 0px",
-        threshold: 0.1,
-      }
-    );
+    function onScroll() {
+      const scrollPos = window.scrollY + 120;
+      let activeIndex = -1;
 
-    sections.forEach((sec) => sec && observer.observe(sec));
+      sections.forEach((section, index) => {
+        if (!section) return;
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollPos >= top && scrollPos < bottom) {
+          activeIndex = index;
+        }
+      });
 
-    // Scroll reveal
-    const revealEls = document.querySelectorAll(".reveal");
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-      }
-    );
-    revealEls.forEach((el) => revealObserver.observe(el));
+      navLinks.forEach((link, index) => {
+        if (index === activeIndex) {
+          link.classList.add("is-active");
+        } else {
+          link.classList.remove("is-active");
+        }
+      });
+    }
 
-    // Parallax effect for blob
-    const blob = document.getElementById("bg-blob");
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const y = scrollY * 0.18;
-      const x = scrollY * 0.06;
-      blob.style.transform = `translate3d(${x}px, ${y}px, 0) scale(1.1)`;
-    });
+    window.addEventListener("scroll", onScroll);
+    onScroll();
 
-    // Current year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Contact form -> mailto: draft
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const name = formData.get("name") || "";
+        const email = formData.get("email") || "";
+        const support = formData.get("support") || "";
+        const message = formData.get("message") || "";
+
+        const subject = `Holisti enquiry from ${name || "website visitor"}`;
+        const bodyLines = [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          support ? `Support needed: ${support}` : "",
+          "",
+          message,
+        ].filter(Boolean);
+
+        const body = encodeURIComponent(bodyLines.join("\n"));
+
+        window.location.href = `mailto:jackbuttimer.dev@gmail.com?subject=${encodeURIComponent(
+          subject
+        )}&body=${body}`;
+
+        contactForm.reset();
+      });
+    }
+
+    // Footer year
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
   </script>
 </body>
 </html>
